@@ -1,4 +1,6 @@
-import Url from "../models/Url.js";
+// ✅ Correct (uppercase 'M' to match folder name)
+import  Url from "../models/Url.js";
+
 import shortid from "shortid";
 
 export const shortUrl = async (req, res) => {
