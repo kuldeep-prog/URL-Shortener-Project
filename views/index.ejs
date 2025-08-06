@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Url shortner project</title>
+  <style>
+    /* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container card */
+.container {
+  background-color: #0f1624;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Heading */
+.container h1 {
+  font-size: 24px;
+  color: #ffb6c1;
+  margin-bottom: 20px;
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Input */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  
+}
+
+input[type="text"]:hover{
+box-shadow: 0 0 15px white;
+}
+
+/* Button */
+button {
+  background-color: #ff7e8f;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 14px rgba(255, 126, 143, 0.5);
+  width: 50%;
+  
+}
+
+button:hover {
+  background-color: #e06778;
+  box-shadow: 0 0 15px white;
+}
+
+ .container h1 {
+  font-size: 40px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  z-index: 1;
+  background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff, #4acfee);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+  }
+
+  @keyframes animate-gradient {
+       to{
+
+           background-position: 200%;
+
+        }
+
+}
+
+/* Output URL */
+p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #fff;
+  word-wrap: break-word;
+}
+
+a {
+  color: #91e0ff;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query for small screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .container h1 {
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  z-index: 1;
+  background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff, #4acfee);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+      <h1>URL Shortener project</h1>
+      <form action="/short" method="POST">
+        <label for="longUrl">Enter long URL -> </label>
+        <input type="text" id="longUrl" name="longUrl" required>
+        <button type="submit">Shorten</button>
+      </form>
+      <% if(shortUrl) { %>
+        <p>Short URL :- <a href="<%= shortUrl %>" target="_blank"><%= shortUrl %></a></p> <% } %>
+    </div>
+</body>
+</html>
