@@ -1,9 +1,23 @@
+// import mongoose from "mongoose";
+
+// const urlSchema = new mongoose.Schema({
+//   shortCode: String,
+//   longUrl: String
+// });
+
+// // ✅ Correct way to register model
+// export const Url = mongoose.model("shortURL", urlSchema);
+// models/Url.js
 import mongoose from "mongoose";
 
 const urlSchema = new mongoose.Schema({
-  shortCode: String,
-  longUrl: String
+  longUrl: String,
+  shortUrl: String,
+  urlCode: String,
+  date: {
+    type: String,
+    default: Date.now,
+  },
 });
 
-// ✅ Correct way to register model
-export const Url = mongoose.model("shortURL", urlSchema);
+export default mongoose.model("Url", urlSchema);
